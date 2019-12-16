@@ -1,0 +1,5 @@
+@import '../../../patternfly-next/src/patternfly/sass-utilities/all';
+@import '../../../patternfly-next/src/patternfly/shield-noninheritable';
+
+// This is where the magic needs to happen.
+@import '../../../patternfly-next/src/patternfly/components/Accordion/accordion.scss';

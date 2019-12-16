@@ -1,0 +1,16 @@
+{
+  "name": "@patternfly/pwc-page",
+  "version": "0.0.1",
+  "description": "PatternFly page web component",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redallen/patternfly-webcomponents.git",
+    "directory": "packages/pwc-page"
+  },
+  "author": "Red Hat",
+  "license": "MIT",
+  "dependencies": {
+    "lit-element": "^2.2.1",
+    "lit-html": "^1.1.2"
+  }
+}
