@@ -14,4 +14,4 @@ git submodule update --init
 yarn && yarn build && yarn start
 ```
 
-http://localhost:8000
+Must use Chrome (for now): http://localhost:8000/demos/index.html

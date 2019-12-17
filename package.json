@@ -24,7 +24,7 @@
     "build:assets": "shx cp -r node_modules/@patternfly/patternfly/assets demos/assets",
     "build:styles": "node scripts/renderStyles.js",
     "build:typescript": "tsc --build packages/**/tsconfig.json",
-    "dev": "es-dev-server --preserve-symlinks --node-resolve",
+    "dev": "es-dev-server --preserve-symlinks --node-resolve --open --app-index demos/index.html",
     "start": "concurrently \"yarn dev\" \"yarn watch\"",
     "watch": "node scripts/watch",
     "watch:styles": "yarn build:styles --watch",
