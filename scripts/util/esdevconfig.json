@@ -1,0 +1,7 @@
+{
+  "nodeResolve": true,
+  "preserveSymlinks": true,
+  "appIndex": "demos/index.html",
+  "watch": true,
+  "port": 9000
+}

@@ -11,24 +11,18 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@patternfly/patternfly": "^2.46.0",
     "chokidar": "^3.3.1",
-    "concurrently": "^5.0.1",
     "es-dev-server": "^1.31.1",
     "lerna": "^3.19.0",
     "node-sass": "^4.13.0",
-    "shx": "^0.3.2"
+    "sass-graph": "^3.0.4"
   },
   "scripts": {
-    "build": "yarn build:assets && yarn build:styles && yarn build:typescript",
-    "build:assets": "shx cp -r node_modules/@patternfly/patternfly/assets demos/assets",
-    "build:styles": "node scripts/renderStyles.js",
+    "build": "node scripts/build.js",
     "build:typescript": "tsc --build packages/**/tsconfig.json",
-    "dev": "es-dev-server --preserve-symlinks --node-resolve --open --app-index demos/index.html",
-    "start": "concurrently \"yarn dev\" \"yarn watch\"",
-    "watch": "node scripts/watch",
-    "watch:styles": "yarn build:styles --watch",
-    "watch:typescript": "yarn build:typescript --watch"
+    "serve": "node scripts/serve.js",
+    "start": "node scripts/watch.js --serve",
+    "watch": "node scripts/watch.js"
   },
   "workspaces": [
     "packages/pwc-*"

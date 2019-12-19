@@ -1,7 +1,7 @@
 const glob = require('glob');
 const fs = require('fs-extra');
-const compileTypescript = require('./compileTypescript');
-const compileSASS = require('./compileSASS');
+const compileTypescript = require('./util/compileTypescript');
+const compileSASS = require('./util/compileSASS');
 
 const patternflyPath = require.resolve('@patternfly/patternfly/package.json');
 fs.copySync(patternflyPath.replace('package.json', 'assets'), '../demos/assets');

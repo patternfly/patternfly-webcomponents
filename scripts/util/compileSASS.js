@@ -18,7 +18,7 @@ export default css\`${compiled.css.toString().trim()}\`;
       
       fs.writeFileSync(toFile, tsTemplate.trim());
       const t1 = process.hrtime();
-      console.log(`Compiled SCSS to ${toFile} in ${(t1[0] - t0[0]) * 1000 + (t1[1] - t0[1]) / 1000000}ms`);
+      console.log(`\x1b[32mCompiled SCSS to ${toFile} in ${(t1[0] - t0[0]) * 1000 + (t1[1] - t0[1]) / 1000000}ms\x1b[0m`);
     })
     .catch(err => console.error(`${err.file}\n${err.formatted}`));
 }
