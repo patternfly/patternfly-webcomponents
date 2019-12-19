@@ -11,18 +11,26 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-syntax-import-meta": "^7.7.4",
+    "@patternfly/patternfly": "^2.46.1",
+    "@storybook/react": "^5.2.8",
+    "babel-loader": "^8.0.6",
     "chokidar": "^3.3.1",
     "es-dev-server": "^1.31.1",
     "lerna": "^3.19.0",
     "node-sass": "^4.13.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "sass-graph": "^3.0.4"
   },
   "scripts": {
     "build": "node scripts/build.js",
     "build:typescript": "tsc --build packages/**/tsconfig.json",
     "serve": "node scripts/serve.js",
-    "start": "node scripts/watch.js --serve",
-    "watch": "node scripts/watch.js"
+    "start": "yarn build && node scripts/watch.js --serve",
+    "watch": "node scripts/watch.js",
+    "storybook": "start-storybook"
   },
   "workspaces": [
     "packages/pwc-*"
