@@ -29,12 +29,12 @@ glob.sync(`${templatePath}/**/*.*`).forEach(file => {
     path.join(rootPath, file.replace(templatePath, ''))
   );
   const contents = templateReplace(fs.readFileSync(file, 'utf8'));
-  // fs.writeFileSync(toPath, contents);
+  fs.ensureFileSync(toPath);
+  fs.writeFileSync(toPath, contents);
 });
 
 // Update index
 const indexFilePath = path.resolve(__dirname, '../demos/index.html');
 const indexFile = fs.readFileSync(indexFilePath, 'utf8')
   .replace(/(\s+)<!-- new component here -->/, `$1<li><a href="/demos/${componentName}.html">${componentName}</a></li>$1<!-- new component here -->`);
-console.log(indexFile);
-// fs.writeFileSync(indexFilePath, indexFile);
+fs.writeFileSync(indexFilePath, indexFile);

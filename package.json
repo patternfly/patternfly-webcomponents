@@ -27,6 +27,7 @@
   "scripts": {
     "build": "node scripts/build.js",
     "build:typescript": "tsc --build packages/**/tsconfig.json",
+    "generate": "node scripts/generate.js",
     "serve": "node scripts/serve.js",
     "start": "yarn build && node scripts/watch.js --serve",
     "watch": "node scripts/watch.js",
