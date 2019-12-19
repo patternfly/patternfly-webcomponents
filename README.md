@@ -1,17 +1,31 @@
-inspiration: https://github.com/material-components/material-components-web-components.git
+# patternfly-webcomponents
 
-adoptedStyleSheets: https://caniuse.com/#search=adoptedStyleSheets
-  - FF status: https://bugzilla.mozilla.org/show_bug.cgi?id=1520690
+PatternFly design Web Components using SASS from [@patternfly/patternfly](https://github.com/patternfly/patternfly-next).
 
+This repo is currently being used to do Proof of Concept work: **_NO COMPONENTS ARE PRODUCTION READY_**
 
 ## Getting started
-### CLONE SUBMODULES
+1. Clone submodules
 ```sh
 git submodule update --init
 ```
-### Start
+2. Install dependencies using yarn workspaces:
 ```sh
-yarn && yarn build && yarn start
+yarn install
+```
+3. Start our custom watch + es-dev-server script. Open http://localhost:9000/demos/index.html
+```sh
+yarn start
+```
+OR
+
+4. Start our React Storybook
+```sh
+yarn storybook
 ```
 
-Must use Chrome (for now): http://localhost:8000/demos/index.html
+## Creating a new component
+I've written some custom scaffolding tools.
+```sh
+yarn generate componentName
+```
