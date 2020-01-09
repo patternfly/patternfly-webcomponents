@@ -33,6 +33,17 @@ module.exports = ({ config }) => {
             },
           },
         },
+        {
+          test: /\.(woff(2)?|ttf|jpg|png|eot|gif|svg)(\?v=\d+\.\d+\.\d+)?$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+              },
+            },
+          ],
+        }
       ],
     },
   };
