@@ -6,3 +6,4 @@ packages/*/*.js.map
 packages/*/*.d.ts
 assets
 *.css.ts
+.idea

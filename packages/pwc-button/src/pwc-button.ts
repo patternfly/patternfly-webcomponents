@@ -1,10 +1,66 @@
+import classnames from 'classnames';
 import { html, LitElement, property, customElement } from 'lit-element';
 import styles from './pwc-button.css';
 
+/**
+ * Button kinds.
+ */
+export enum BUTTON_KIND {
+  /**
+   * Primary button.
+   */
+  PRIMARY = 'primary',
+
+  /**
+   * Secondary button.
+   */
+  SECONDARY = 'secondary',
+
+  /**
+   * Tertiary button.
+   */
+  TERTIARY = 'tertiary',
+
+  /**
+   * Danger button.
+   */
+  DANGER = 'danger',
+
+  /**
+   * Link button.
+   */
+  LINK = 'link',
+
+  /**
+   * Link button.
+   */
+  PLAIN = 'plain',
+
+  /**
+   * Link button.
+   */
+  INLINE = 'inline',
+}
+
 @customElement('pwc-button')
 export class PWCButton extends LitElement {
-  @property() variant = 'primary';
-  @property() label = 'label';
+  /**
+   * `true` if the button should be disabled. Corresponds to the attribute with the same name.
+   */
+  @property({ type: Boolean, reflect: true })
+  disabled = false;
+
+  /**
+   * Button kind. Corresponds to the attribute with the same name.
+   */
+  @property({ reflect: true })
+  variant = BUTTON_KIND.PRIMARY;
+
+  /**
+   * Additional button classes
+   */
+  @property({ reflect: false })
+  class = '';
 
   static get styles() {
     return styles;
@@ -15,9 +71,12 @@ export class PWCButton extends LitElement {
   }
 
   protected render() {
+    const { disabled, variant, class: additionalClass } = this;
+    const classes = classnames(additionalClass, `pf-c-button`, {
+      [`pf-m-${variant}`]: variant,
+    });
     return html`
-      <button class="pf-c-button pf-m-${this.variant}">
-        ${this.label}
-      </button>`;
+      <button id="button" class="${classes}" ?disabled=${disabled}><slot></slot></button>
+    `;
   }
 }
