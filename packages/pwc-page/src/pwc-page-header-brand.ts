@@ -3,10 +3,10 @@ import { html, property, customElement, LitElement } from 'lit-element';
 import styles from './pwc-page.css';
 
 /**
- * Page.
+ * Page Header Brand.
  */
-@customElement('pwc-page')
-export class PWCPage extends LitElement {
+@customElement('pwc-page-header-brand')
+export class PWCPageHeaderBrand extends LitElement {
   /**
    * Additional button classes
    */
@@ -23,7 +23,7 @@ export class PWCPage extends LitElement {
 
   protected render() {
     // const { class: additionalClass } = this;
-    // const classes = classnames(additionalClass, 'pf-c-page');
+    // const classes = classnames(additionalClass, 'pf-c-page__header-brand');
     // return html`
     //   <div class="${classes}"><slot></slot></div>
     // `;
