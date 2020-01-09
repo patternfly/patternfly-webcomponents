@@ -1,12 +1,12 @@
-// import classnames from 'classnames';
+import classnames from 'classnames';
 import { html, property, customElement, LitElement } from 'lit-element';
 import styles from './pwc-page.css';
 
 /**
- * Page.
+ * Page Header Brand.
  */
-@customElement('pwc-page')
-export class PWCPage extends LitElement {
+@customElement('pwc-page-header-brand-toggle')
+export class PWCPageHeaderBrandToggle extends LitElement {
   /**
    * Additional button classes
    */
@@ -22,13 +22,10 @@ export class PWCPage extends LitElement {
   }
 
   protected render() {
-    // const { class: additionalClass } = this;
-    // const classes = classnames(additionalClass, 'pf-c-page');
-    // return html`
-    //   <div class="${classes}"><slot></slot></div>
-    // `;
+    const { class: additionalClass } = this;
+    const classes = classnames(additionalClass, 'pf-c-page__header-brand-toggle');
     return html`
-      <slot></slot>
+      <div class="${classes}"><slot></slot></div>
     `;
   }
 }
