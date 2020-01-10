@@ -31,11 +31,6 @@ export class PWCPage extends LitElement {
   }
 
   protected render() {
-    // const { class: additionalClass } = this;
-    // const classes = classnames(additionalClass, 'pf-c-page');
-    // return html`
-    //   <div class="${classes}"><slot></slot></div>
-    // `;
     return html`
       <slot></slot>
     `;
