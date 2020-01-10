@@ -51,9 +51,9 @@ export class PWCButton extends LitElement {
   disabled = false;
 
   /**
-   * Button kind. Corresponds to the attribute with the same name.
+   * Button variant
    */
-  @property({ reflect: true })
+  @property({ reflect: false })
   variant = BUTTON_KIND.PRIMARY;
 
   /**
@@ -72,9 +72,9 @@ export class PWCButton extends LitElement {
 
   protected render() {
     const { disabled, variant, class: additionalClass } = this;
-    const classes = classnames(additionalClass, `pf-c-button`, {
-      [`pf-m-${variant}`]: variant,
-    });
+    const classes = classnames(`pf-c-button`, {
+      [`pf-m-${variant}`]: variant
+    }, additionalClass);
     return html`
       <button id="button" class="${classes}" ?disabled=${disabled}><slot></slot></button>
     `;
