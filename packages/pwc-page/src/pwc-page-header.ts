@@ -1,17 +1,26 @@
-// import classnames from 'classnames';
+import classnames from 'classnames';
 import { html, property, customElement, LitElement } from 'lit-element';
 import styles from './pwc-page.css';
 
 /**
- * Page Header.
+ * Page header
  */
 @customElement('pwc-page-header')
 export class PWCPageHeader extends LitElement {
+  protected defaultClass = 'pf-c-page__header';
+
   /**
    * Additional button classes
    */
-  @property({ reflect: false })
-  class = '';
+  @property({ type: String, reflect: true })
+  class = this.defaultClass;
+
+  public attributeChangedCallback(name, oldval, newval) {
+    if (name === 'class') {
+      this.class = classnames(this.defaultClass, newval);
+      super.attributeChangedCallback(name, oldval, this.class);
+    }
+  }
 
   protected createRenderRoot() {
     return this.attachShadow({ mode: 'open', delegatesFocus: true });
@@ -22,11 +31,8 @@ export class PWCPageHeader extends LitElement {
   }
 
   protected render() {
-    // const { class: additionalClass } = this;
-    // const classes = classnames(additionalClass, 'pf-c-page__header');
-    const classes = 'pf-c-page__header';
     return html`
-      <header role="banner" class="${classes}"><slot></slot></header>
+      <header role="banner" class="${this.defaultClass}"><slot></slot></header>
     `;
   }
 }

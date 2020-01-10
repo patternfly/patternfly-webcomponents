@@ -3,15 +3,24 @@ import { html, property, customElement, LitElement } from 'lit-element';
 import styles from './pwc-page.css';
 
 /**
- * Page Header Brand.
+ * Page header brand toggle
  */
 @customElement('pwc-page-header-brand-toggle')
 export class PWCPageHeaderBrandToggle extends LitElement {
+  protected defaultClass = 'pf-c-page__header-brand-link';
+
   /**
    * Additional button classes
    */
-  @property({ reflect: false })
-  class = '';
+  @property({ type: String, reflect: true })
+  class = this.defaultClass;
+
+  public attributeChangedCallback(name, oldval, newval) {
+    if (name === 'class') {
+      this.class = classnames(this.defaultClass, newval);
+      super.attributeChangedCallback(name, oldval, this.class);
+    }
+  }
 
   protected createRenderRoot() {
     return this.attachShadow({ mode: 'open', delegatesFocus: true });
@@ -22,10 +31,8 @@ export class PWCPageHeaderBrandToggle extends LitElement {
   }
 
   protected render() {
-    const { class: additionalClass } = this;
-    const classes = classnames(additionalClass, 'pf-c-page__header-brand-toggle');
     return html`
-      <div class="${classes}"><slot></slot></div>
+      <slot></slot>
     `;
   }
 }
