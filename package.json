@@ -35,7 +35,7 @@
   "scripts": {
     "build": "node scripts/build.js",
     "build:typescript": "tsc --build packages/**/tsconfig.json",
-    "clean": "rm -rf */*/.tsbuildinfo packages/*/*.js packages/*/*.js.map packages/*/*.d.ts *.css.ts",
+    "clean": "rm -rf packages/*/.tsbuildinfo packages/*/*.js packages/*/*.js.map packages/*/*.d.ts packages/*/*/*.css.ts",
     "generate": "node scripts/generate.js",
     "serve": "node scripts/serve.js",
     "start": "yarn build && node scripts/watch.js --serve",

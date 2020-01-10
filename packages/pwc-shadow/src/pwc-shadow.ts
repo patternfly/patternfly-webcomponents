@@ -1,13 +1,10 @@
 import classnames from 'classnames';
-import { html, property, customElement, LitElement } from 'lit-element';
-import styles from './pwc-page.css';
+import { html, LitElement, property, customElement } from 'lit-element';
+import styles from './pwc-shadow.css';
 
-/**
- * Page
- */
-@customElement('pwc-page')
-export class PWCPage extends LitElement {
-  protected defaultClass = 'pf-c-page';
+@customElement('pwc-shadow')
+export class PwcShadow extends LitElement {
+  protected defaultClass = '';
 
   /**
    * Additional button classes

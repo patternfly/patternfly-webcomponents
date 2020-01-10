@@ -5,7 +5,7 @@ import styles from './pwc-button.css';
 /**
  * Button kinds.
  */
-export enum BUTTON_KIND {
+export enum BUTTON_VARIANT {
   /**
    * Primary button.
    */
@@ -54,7 +54,7 @@ export class PWCButton extends LitElement {
    * Button variant
    */
   @property({ reflect: false })
-  variant = BUTTON_KIND.PRIMARY;
+  variant = BUTTON_VARIANT.PRIMARY;
 
   /**
    * Additional button classes
@@ -67,7 +67,7 @@ export class PWCButton extends LitElement {
   }
 
   protected createRenderRoot() {
-    return this.attachShadow({ mode: 'open' });
+    return this.attachShadow({ mode: 'open', delegatesFocus: true });
   }
 
   protected render() {
