@@ -18,7 +18,7 @@
     "outDir": "./",
     "baseUrl": "./packages",
     "paths": {
-      "@patternfly/wc-*": ["./*/src"]
+      "@patternfly/wwc-*": ["./*/src"]
     },
     "composite": true,
     "importHelpers": true

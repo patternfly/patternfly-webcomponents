@@ -34,6 +34,25 @@ module.exports = ({ config }) => {
           },
         },
         {
+          test: /-story(-(angular|react))?\.[jt]sx?$/,
+          use: [
+            {
+              loader: require.resolve('@storybook/source-loader'),
+              options: {
+                parser: 'typescript',
+                prettierConfig: {
+                  printWidth: 80,
+                  tabWidth: 2,
+                  bracketSpacing: true,
+                  trailingComma: 'es5',
+                  singleQuote: true,
+                },
+              },
+            },
+          ],
+          enforce: 'pre',
+        },
+        {
           test: /\.(woff(2)?|ttf|jpg|png|eot|gif|svg)(\?v=\d+\.\d+\.\d+)?$/,
           use: [
             {
