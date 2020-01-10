@@ -1,0 +1,16 @@
+{
+  "name": "@patternfly/pwc-dropdown",
+  "version": "0.0.1",
+  "description": "PatternFly dropdown web component",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-webcomponents.git",
+    "directory": "packages/pwc-dropdown"
+  },
+  "author": "Red Hat",
+  "license": "MIT",
+  "dependencies": {
+    "lit-element": "^2.2.1",
+    "lit-html": "^1.1.2"
+  }
+}
