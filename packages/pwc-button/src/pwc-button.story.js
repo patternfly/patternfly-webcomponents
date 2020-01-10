@@ -2,20 +2,21 @@ import { html } from 'lit-html';
 import { storiesOf } from '@storybook/polymer';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
-import { BUTTON_KIND } from '../pwc-button.js';
+
+import { BUTTON_VARIANT } from '../pwc-button.js';
 
 const variants = {
-  [`Primary button (${BUTTON_KIND.PRIMARY})`]: BUTTON_KIND.PRIMARY,
-  [`Secondary button (${BUTTON_KIND.SECONDARY})`]: BUTTON_KIND.SECONDARY,
-  [`Tertiary button (${BUTTON_KIND.TERTIARY})`]: BUTTON_KIND.TERTIARY,
-  [`Danger button (${BUTTON_KIND.DANGER})`]: BUTTON_KIND.DANGER,
-  [`Link button (${BUTTON_KIND.LINK})`]: BUTTON_KIND.LINK,
-  [`Plain button (${BUTTON_KIND.PLAIN})`]: BUTTON_KIND.PLAIN,
-  [`Inline button (${BUTTON_KIND.INLINE})`]: BUTTON_KIND.INLINE,
+  [`Primary button (${BUTTON_VARIANT.PRIMARY})`]: BUTTON_VARIANT.PRIMARY,
+  [`Secondary button (${BUTTON_VARIANT.SECONDARY})`]: BUTTON_VARIANT.SECONDARY,
+  [`Tertiary button (${BUTTON_VARIANT.TERTIARY})`]: BUTTON_VARIANT.TERTIARY,
+  [`Danger button (${BUTTON_VARIANT.DANGER})`]: BUTTON_VARIANT.DANGER,
+  [`Link button (${BUTTON_VARIANT.LINK})`]: BUTTON_VARIANT.LINK,
+  [`Plain button (${BUTTON_VARIANT.PLAIN})`]: BUTTON_VARIANT.PLAIN,
+  [`Inline button (${BUTTON_VARIANT.INLINE})`]: BUTTON_VARIANT.INLINE,
 };
 
 const createProps = () => ({
-  variant: select('Button variant (variant)', variants, BUTTON_KIND.PRIMARY),
+  variant: select('Button variant (variant)', variants, BUTTON_VARIANT.PRIMARY),
   disabled: boolean('Disabled (disabled)', false),
   onClick: action('click'),
   additionalClasses: text('Additional classes', ''),
