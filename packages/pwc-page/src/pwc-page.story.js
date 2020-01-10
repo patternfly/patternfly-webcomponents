@@ -24,9 +24,9 @@ storiesOf('Page', module)
       <section style="padding: 20px">
         <h1 class="pf-c-title pf-m-3xl">Page</h1>
         <br />
-        <pwc-page class="pf-c-page ${additionalClasses}">
-          <pwc-page-header class="pf-c-page__header">
-            <pwc-page-header-brand class="pf-c-page__header-brand">
+        <pwc-page class="${additionalClasses}">
+          <pwc-page-header>
+            <pwc-page-header-brand>
               <pwc-page-header-brand-link>
                 <img
                   class="pf-c-brand"
@@ -35,7 +35,7 @@ storiesOf('Page', module)
                 />
               </pwc-page-header-brand-link>
             </pwc-page-header-brand>
-            <pwc-page-header-tools class="pf-c-page__header-tools">
+            <pwc-page-header-tools>
               <div class="pf-c-page__header-tools-group">
                 <button class="pf-c-button pf-m-plain" type="button" aria-label="Alerts">
                   <svg
