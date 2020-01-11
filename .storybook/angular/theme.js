@@ -1,6 +1,6 @@
 import { create } from '@storybook/theming';
 
 export default create({
-  brandTitle: 'PatternFly web components with React',
+  brandTitle: 'PatterFly web components with Angular',
   brandUrl: 'https://github.com/patternfly/patternfly-webcomponents',
 });

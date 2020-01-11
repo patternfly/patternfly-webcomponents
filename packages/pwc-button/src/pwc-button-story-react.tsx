@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
 import createReactCustomElementType, { booleanSerializer } from '../../pwc-utils/createReactCustomElementType';
-import { BUTTON_KIND } from '../pwc-button.js';
+
+import { BUTTON_VARIANT } from '../pwc-button.js';
 
 const PwcButton = createReactCustomElementType('pwc-button', {
   disabled: {
@@ -15,13 +16,13 @@ const PwcButton = createReactCustomElementType('pwc-button', {
 });
 
 const variant = {
-  [`Primary button (${BUTTON_KIND.PRIMARY})`]: BUTTON_KIND.PRIMARY,
-  [`Secondary button (${BUTTON_KIND.SECONDARY})`]: BUTTON_KIND.SECONDARY,
-  [`Danger button (${BUTTON_KIND.DANGER})`]: BUTTON_KIND.DANGER,
+  [`Primary button (${BUTTON_VARIANT.PRIMARY})`]: BUTTON_VARIANT.PRIMARY,
+  [`Secondary button (${BUTTON_VARIANT.SECONDARY})`]: BUTTON_VARIANT.SECONDARY,
+  [`Danger button (${BUTTON_VARIANT.DANGER})`]: BUTTON_VARIANT.DANGER,
 };
 
 const createProps = () => ({
-  variant: select('Button variant', variant, BUTTON_KIND.PRIMARY),
+  variant: select('Button variant', variant, BUTTON_VARIANT.PRIMARY),
   disabled: boolean('Disabled', false),
   onClick: action('click'),
 });
