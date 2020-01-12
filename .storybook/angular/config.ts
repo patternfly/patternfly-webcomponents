@@ -1,5 +1,3 @@
-import '../../packages/pwc-utils/src/polyfills';
-
 import { configure, addDecorator, addParameters } from '@storybook/angular';
 import theme from './theme';
 import containerStyles from '../_container.scss'; // eslint-disable-line import/first
