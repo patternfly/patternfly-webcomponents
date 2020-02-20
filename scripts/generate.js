@@ -32,9 +32,3 @@ glob.sync(`${templatePath}/**/*.*`).forEach(file => {
   fs.ensureFileSync(toPath);
   fs.writeFileSync(toPath, contents);
 });
-
-// Update index
-const indexFilePath = path.resolve(__dirname, '../demos/index.html');
-const indexFile = fs.readFileSync(indexFilePath, 'utf8')
-  .replace(/(\s+)<!-- new component here -->/, `$1<li><a href="/demos/${componentName}.html">${componentName}</a></li>$1<!-- new component here -->`);
-fs.writeFileSync(indexFilePath, indexFile);

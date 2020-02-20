@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import { html, property, customElement, LitElement } from 'lit-element';
 import styles from './pwc-page.css';
 
@@ -17,7 +16,7 @@ export class PWCPageHeaderBrand extends LitElement {
 
   public attributeChangedCallback(name, oldval, newval) {
     if (name === 'class') {
-      this.class = classnames(this.defaultClass, newval);
+      this.class = [this.defaultClass, newval].filter(Boolean).join(' ');
       super.attributeChangedCallback(name, oldval, this.class);
     }
   }

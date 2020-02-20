@@ -13,7 +13,7 @@ git submodule update --init
 ```sh
 yarn install
 ```
-3. Start our custom watch + es-dev-server script. Open http://localhost:9000/demos/index.html
+3. Start our custom watch + es-dev-server script. Open http://localhost:9000/docs/index.html
 ```sh
 yarn start
 ```

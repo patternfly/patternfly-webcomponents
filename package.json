@@ -30,15 +30,14 @@
     "@storybook/storybook-deployer": "^2.8.1",
     "babel-loader": "^8.0.6",
     "chokidar": "^3.3.1",
-    "classnames": "^2.2.6",
-    "es-dev-server": "^1.31.1",
+    "es-dev-server": "^1.40.0",
     "lerna": "^3.19.0",
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "sass-graph": "^3.0.4",
     "typescript": "^3.7.3",
-    "zone.js": "^0.8.0"
+    "zone.js": "^0.10.2"
   },
   "scripts": {
     "build": "node scripts/build.js",
@@ -48,7 +47,7 @@
     "serve": "node scripts/serve.js",
     "start": "yarn build && node scripts/watch.js --serve",
     "watch": "node scripts/watch.js",
-    "storybook": "start-storybook -p 9000",
+    "storybook": "start-storybook -p 9001",
     "storybook:react": "start-storybook -p 9002 -c .storybook/react",
     "storybook:angular": "start-storybook -p 9003 -c .storybook/angular"
   },

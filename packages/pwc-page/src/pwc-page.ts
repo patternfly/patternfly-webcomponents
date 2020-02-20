@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import { html, property, customElement, LitElement } from 'lit-element';
 import styles from './pwc-page.css';
 
@@ -9,15 +8,13 @@ import styles from './pwc-page.css';
 export class PWCPage extends LitElement {
   protected defaultClass = 'pf-c-page';
 
-  /**
-   * Additional button classes
-   */
+  /* Additional page classes */
   @property({ type: String, reflect: true })
   class = this.defaultClass;
 
   public attributeChangedCallback(name, oldval, newval) {
     if (name === 'class') {
-      this.class = classnames(this.defaultClass, newval);
+      this.class = [this.defaultClass, newval].filter(Boolean).join(' ');
       super.attributeChangedCallback(name, oldval, this.class);
     }
   }

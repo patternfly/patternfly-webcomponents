@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import { html, LitElement, property, customElement } from 'lit-element';
 import styles from './pwc-textinput.css';
 
@@ -26,7 +25,7 @@ export class PwcTextinput extends LitElement {
 
   public attributeChangedCallback(name, oldval, newval) {
     if (name === 'class') {
-      this.class = classnames(this.defaultClass, newval);
+      this.class = [this.defaultClass, newval].filter(Boolean).join(' ');
       super.attributeChangedCallback(name, oldval, this.class);
     }
   }
@@ -41,7 +40,7 @@ export class PwcTextinput extends LitElement {
 
   protected render() {
     const { class: additionalClass, id } = this;
-    const classes = classnames(this.defaultClass, additionalClass);
+    const classes = [this.defaultClass, additionalClass].filter(Boolean).join(' ');
     return html`
       <input class="${classes}" id="${id}" type="text" />
     `;

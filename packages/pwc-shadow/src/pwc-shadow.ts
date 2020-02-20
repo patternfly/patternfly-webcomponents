@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import { html, LitElement, property, customElement } from 'lit-element';
 import styles from './pwc-shadow.css';
 
@@ -14,7 +13,7 @@ export class PwcShadow extends LitElement {
 
   public attributeChangedCallback(name, oldval, newval) {
     if (name === 'class') {
-      this.class = classnames(this.defaultClass, newval);
+      this.class = [this.defaultClass, newval].filter(Boolean).join(' ');
       super.attributeChangedCallback(name, oldval, this.class);
     }
   }

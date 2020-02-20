@@ -3,7 +3,7 @@ const { createConfig, createServer } = require('es-dev-server');
 const config = require('./esdevconfig.json');
 
 const watcher = chokidar.watch(
-  ['demos', 'node_modules/@patternfly/wc-*/*.js'],
+  ['docs', 'node_modules/@patternfly/wc-*/*.js'],
   { persistent: false }
 );
 

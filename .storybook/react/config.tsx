@@ -2,7 +2,7 @@
 import React, { StrictMode } from 'react';
 import { configure, addDecorator, addParameters } from '@storybook/react'; // eslint-disable-line import/first
 import theme from './theme';
-import containerStyles from '../_container.scss'; // eslint-disable-line import/first
+import '../../docs/variables.css';
 
 addParameters({
   options: {

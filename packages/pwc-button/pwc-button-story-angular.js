@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/angular';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select } from '@storybook/addon-knobs/angular';
 
-import { BUTTON_VARIANT } from '../pwc-button.js';
+import { BUTTON_VARIANT } from '@patternfly/pwc-button/pwc-button.js';
 
 const variant = {
   [`Primary button (${BUTTON_VARIANT.PRIMARY})`]: BUTTON_VARIANT.PRIMARY,

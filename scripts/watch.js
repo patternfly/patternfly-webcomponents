@@ -2,12 +2,14 @@ const path = require('path');
 const chokidar = require('chokidar');
 const compileSASS = require('./util/compileSASS');
 const compileTypescript = require('./util/compileTypescript');
+const transformHTML = require('./util/transformHTML');
 const SASSGraph = require('./util/sassGraph');
 const config = require('./util/esdevconfig.json');
 const { server } = require('./util/createServer');
 
 const watcher = chokidar.watch([
   'packages/pwc-*/src/*.{ts,scss}',
+  'packages/pwc-*/**/*.html',
   'patternfly-next/src/patternfly/**/*.scss'
 ], {
   ignored: /(^|[\/\\])\../, // ignore dotfiles
@@ -33,15 +35,24 @@ async function listener(file) {
   else if (file.endsWith('.ts')) {
     await compileTypescript();
   }
+  else if (file.endsWith('.html')) {
+    await transformHTML(file);
+  }
+}
+
+function remover(file) {
+  console.log(`\x1b[33m${file}\x1b[0m`);
+
 }
 
 watcher
   .on('add', listener)
-  .on('change', listener);
+  .on('change', listener)
+  .on('unlink', remover);
 
 console.log('Watcher started!');
 
 if (process.argv.includes('--serve')) {
-  console.log(`es-dev-server running on http://localhost:${config.port}`);
+  console.log(`es-dev-server running on http://localhost:${config.port}/docs`);
   server.listen(config.port);
 }

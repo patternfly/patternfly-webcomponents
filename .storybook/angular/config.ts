@@ -1,6 +1,6 @@
 import { configure, addDecorator, addParameters } from '@storybook/angular';
 import theme from './theme';
-import containerStyles from '../_container.scss'; // eslint-disable-line import/first
+import '../../docs/variables.css';
 
 addParameters({
   options: {
@@ -11,7 +11,7 @@ addParameters({
 addDecorator(story => {
   const { template, ...rest } = story();
   // Makes the style global instead of letting Angular scope it
-  const { cssText } = "";
+  const cssText = "";
   let containerStyleNode = document.getElementById('container-style');
   if (!containerStyleNode) {
     containerStyleNode = document.createElement('style');
