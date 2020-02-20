@@ -25,7 +25,7 @@ yarn storybook
 ```
 
 ## Creating a new component
-I've written some custom scaffolding tools.
+I've written a custom scaffolding tool.
 ```sh
 yarn generate componentName
 ```

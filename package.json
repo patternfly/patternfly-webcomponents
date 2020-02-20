@@ -47,7 +47,6 @@
     "serve": "node scripts/serve.js",
     "start": "yarn build && node scripts/watch.js --serve",
     "watch": "node scripts/watch.js",
-    "storybook": "start-storybook -p 9001",
     "storybook:react": "start-storybook -p 9002 -c .storybook/react",
     "storybook:angular": "start-storybook -p 9003 -c .storybook/angular"
   },

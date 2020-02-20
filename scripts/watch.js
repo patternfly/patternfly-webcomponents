@@ -7,6 +7,8 @@ const SASSGraph = require('./util/sassGraph');
 const config = require('./util/esdevconfig.json');
 const { server } = require('./util/createServer');
 
+const index = {};
+
 const watcher = chokidar.watch([
   'packages/pwc-*/src/*.{ts,scss}',
   'packages/pwc-*/**/*.html',
@@ -23,7 +25,7 @@ process.on('SIGINT', () => {
 
 const graph = new SASSGraph();
 async function listener(file) {
-  console.log(`\x1b[36m${file}\x1b[0m`);
+  console.log(`\x1b[36mtouch ${file}\x1b[0m`);
   if (file.endsWith('.scss')) {
     const fullPath = path.join(process.cwd(), file);
     const webcomponentDependents = graph.visit(graph.graph[fullPath], [fullPath])
@@ -41,8 +43,7 @@ async function listener(file) {
 }
 
 function remover(file) {
-  console.log(`\x1b[33m${file}\x1b[0m`);
-
+  console.log(`\x1b[33mrm ${file}\x1b[0m`);
 }
 
 watcher

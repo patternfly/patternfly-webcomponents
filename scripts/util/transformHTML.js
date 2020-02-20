@@ -1,8 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-
-console.log('required');
-const index = {};
+const glob = require('glob');
 
 function writeIndex() {
   const html = `<!DOCTYPE html>
@@ -14,7 +12,8 @@ function writeIndex() {
     <body>
       <section class="pf-c-page__main-section" style="padding: 20px">
         <ul>
-          ${Object.keys(index)
+          ${glob.sync('docs/pwc-*.html')
+            .map(file => file.replace('docs', '').replace(path.sep, '').replace('.html', ''))
             .sort()
             .map(item => `<li><a href="/docs/${item}.html">${item}</a></li>`).join('\n          ')}
         </ul>
@@ -50,7 +49,8 @@ async function transformHTML(file) {
       ${html}
     </section>
     ${Object.keys(usedComponents)
-      .map(used => `<script type="module" src="../node_modules/@patternfly/${component}/${used}.js"></script>`)
+      .map(used => `<script type="module" src="../node_modules/@patternfly/${
+        used.split('-').slice(0, 2).join('-')}/dist/${used}.js"></script>`)
       .join('\n    ')}
   </body>
 </html>`;
@@ -59,7 +59,6 @@ async function transformHTML(file) {
     path.join(process.cwd(), 'docs', `${component}.html`),
     newHTML
   );
-  index[component] = true;
   writeIndex();
 }
 
