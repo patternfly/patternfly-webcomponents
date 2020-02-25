@@ -36,7 +36,7 @@ export class PWCButton extends LitElement {
 
   /* handle onClick event */
   @property({ type: Function })
-  onClick;
+  click;
 
   static get styles() {
     return styles;
@@ -47,9 +47,9 @@ export class PWCButton extends LitElement {
   }
 
   protected render() {
-    const { onClick, disabled, variant, class: additionalClass } = this;
+    const { click, disabled, variant, class: additionalClass } = this;
     return html`
-      <button class="pf-c-button ${variant ? `pf-m-${variant}` : ''} ${additionalClass || ''}" ?disabled=${disabled} @onClick="${onClick}">
+      <button class="pf-c-button ${variant ? `pf-m-${variant}` : ''} ${additionalClass || ''}" ?disabled=${disabled} @click=${click}>
         <slot></slot>
       </button>
     `;
