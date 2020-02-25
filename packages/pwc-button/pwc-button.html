@@ -1,4 +1,18 @@
 <h1 class="pf-c-title pf-m-3xl">Button Variations</h1>
+
+<script>
+  function handleClick(){
+    console.log('click');
+  }
+  function addClick(){
+    document.querySelector('#event-btn').click = handleClick;
+  }
+  document.querySelector('body').onload=addClick;
+</script>
+
+<pwc-button id="event-btn" variant="primary"}>
+  Event Button
+</pwc-button>
 <pwc-button variant="primary">
   Primary Button
 </pwc-button>
@@ -23,3 +37,4 @@
 <pwc-button variant="inline" class="pf-m-link">
   Inline link button
 </pwc-button>
+
