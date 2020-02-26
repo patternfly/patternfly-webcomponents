@@ -63,7 +63,7 @@ export class PWCButton extends LitElement {
   }
 
   protected render() {
-    const { click, disabled, class: additionalClass, type, variant } = this;
+    const { click, disabled, class: additionalClass, variant } = this;
     return html`
       <button class="pf-c-button 
               ${variant ? `pf-m-${variant}` : ''} 
