@@ -1,15 +1,4 @@
 <h1 class="pf-c-title pf-m-3xl">Button Variations</h1>
-
-<script>
-  function handleClick(){
-    console.log('click');
-  }
-  function addClick(){
-    document.querySelector('#event-btn').click = handleClick;
-  }
-  document.querySelector('body').onload=addClick;
-</script>
-
 <pwc-button variant="primary">
   Primary Button
 </pwc-button>
@@ -34,10 +23,31 @@
 <pwc-button variant="inline" class="pf-m-link">
   Inline link button
 </pwc-button>
+
 <br/><br/><br/>
+<h1 class="pf-c-title pf-m-3xl">Button Events</h1>
+<script>
+  function handleClick(){
+    console.log('click');
+  }
+  function addClick(){
+    document.querySelector('#event-btn').click = handleClick;
+  }
+  document.querySelector('body').onload=addClick;
+</script>
 <pwc-button id="event-btn" variant="primary"}>
-  Event Button
+  Click Event Button
 </pwc-button>
+
+<br/><br/><br/>
+<h1 class="pf-c-title pf-m-3xl">Button Disabled</h1>
 <pwc-button variant="primary" disabled="true">
-  Disabled Button
+  Disabled(true) Button
 </pwc-button>
+<pwc-button variant="primary" disabled="false">
+  Disabled(false) Button
+</pwc-button>
+<pwc-button variant="primary">
+  Disabled(default) Button
+</pwc-button>
+
