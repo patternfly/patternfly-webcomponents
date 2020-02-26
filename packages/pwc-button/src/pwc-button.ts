@@ -69,7 +69,7 @@ export class PWCButton extends LitElement {
               ${variant ? `pf-m-${variant}` : ''} 
               ${additionalClass || ''}" 
               ?disabled=${disabled} 
-              @click=${click} 
+              @click=${click}> 
         <slot></slot>
       </button>
     `;
