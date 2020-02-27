@@ -32,7 +32,7 @@ storiesOf('React Button', module)
   .add('Default', () => {
     const { variant, disabled, onClick } = createProps();
     return (
-      <PwcButton variant={variant} disabled={ true } onClick={onClick}>
+      <PwcButton variant={variant} disabled={disabled} onClick={onClick}>
         Button
       </PwcButton>
     );
