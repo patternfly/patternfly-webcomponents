@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import createReactCustomElementType, { booleanSerializer } from '../../.storybook/react/util/createReactCustomElementType';
 
-import { BUTTON_VARIANT } from '@patternfly/pwc-button/pwc-button.js';
+import { BUTTON_VARIANT } from '@patternfly/pwc-button/dist/pwc-button';
 
 const PwcButton = createReactCustomElementType('pwc-button', {
   disabled: {
