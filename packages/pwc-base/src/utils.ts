@@ -14,22 +14,18 @@ export const booleanConverter: ComplexAttributeConverter = {
   },
 
   fromAttribute(value: any) {
-    console.log("Attr Value: " + value)
     let retVal;
 
     // test if attribute is Boolean type.
     if (typeof value === "boolean" && !Boolean(value)){
-      console.log("Boolean Value: " + Boolean(value))
       retVal = "false";
     } else {
       retVal = value;
     }
 
     if (null === retVal || retVal === "false") {
-      console.log("return: null")
       return null;
     } else  {
-      console.log("return: true")
       return true;
     }
   }
