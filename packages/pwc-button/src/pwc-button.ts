@@ -1,4 +1,5 @@
 import { html, LitElement, property, customElement } from 'lit-element';
+import { classnames } from '@patternfly/pwc-base/dist/utils';
 import styles from './pwc-button.css';
 
 export enum BUTTON_VARIANT {
@@ -65,9 +66,7 @@ export class PWCButton extends LitElement {
   protected render() {
     const { click, disabled, class: additionalClass, variant } = this;
     return html`
-      <button class="pf-c-button 
-              ${variant ? `pf-m-${variant}` : ''} 
-              ${additionalClass || ''}" 
+      <button class="${classnames('pf-c-button', variant && `pf-m-${variant}`, additionalClass)} 
               ?disabled=${disabled} 
               @click=${click}> 
         <slot></slot>
