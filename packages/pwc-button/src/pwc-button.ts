@@ -27,20 +27,7 @@ export class PWCButton extends LitElement {
   @property({
     type: Boolean,
     reflect: true,
-    converter: {
-      toAttribute(value) {
-        let retVal = String(value);
-        return retVal;
-      },
-
-      fromAttribute(value) {
-        if (null === value || "false" === value.toLowerCase()) {
-          return null;
-        } else  {
-          return Boolean(value);
-        }
-      }
-    }})
+  })
   disabled;
 
   /* Button variant */
@@ -66,9 +53,9 @@ export class PWCButton extends LitElement {
   protected render() {
     const { click, disabled, class: additionalClass, variant } = this;
     return html`
-      <button class="${classnames('pf-c-button', variant && `pf-m-${variant}`, additionalClass)} 
+      <button class="${classnames('pf-c-button', variant && `pf-m-${variant}`, additionalClass)}" 
               ?disabled=${disabled} 
-              @click=${click}> 
+              @click=${click}>
         <slot></slot>
       </button>
     `;
