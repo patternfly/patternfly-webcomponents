@@ -1,6 +1,6 @@
 # patternfly-webcomponents
 
-PatternFly design Web Components using Sass from [@patternfly/patternfly](https://github.com/patternfly/patternfly-next).
+PatternFly design Web Components using Sass from [@patternfly/patternfly](https://github.com/patternfly/patternfly).
 
 This repo is currently being used for testing: **_NO COMPONENTS ARE PRODUCTION READY_**
 

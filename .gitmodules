@@ -1,4 +1,4 @@
-[submodule "patternfly-next"]
-	path = patternfly-next
-	url = https://github.com/patternfly/patternfly-next.git
+[submodule "patternfly"]
+	path = patternfly
+	url = https://github.com/patternfly/patternfly.git
 	branch = webcomponents

@@ -12,7 +12,7 @@ const index = {};
 const watcher = chokidar.watch([
   'packages/pwc-*/src/*.{ts,scss}',
   'packages/pwc-*/**/*.html',
-  'patternfly-next/src/patternfly/**/*.scss'
+  'patternfly/src/patternfly/**/*.scss'
 ], {
   ignored: /(^|[\/\\])\../, // ignore dotfiles
   persistent: true,
